@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="1024.0" style="-fx-background-color: #141029;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.buskursova.MainController">
+   <children>
+      <AnchorPane layoutY="71.0" prefHeight="574.0" prefWidth="1027.0" style="-fx-background-color: #b4b3b5;">
+         <children>
+            <MenuBar fx:id="menubar" layoutX="1.0" layoutY="1.0" prefHeight="22.0" prefWidth="1024.0" style="-fx-background-color: #f0eded;">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="closeapp" mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="savetxt" mnemonicParsing="false" onAction="#writeBusesToFile" text="Зберегти дані у txt файл" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="output_all_bus" mnemonicParsing="false" onAction="#showAll" text="Вивести дані про всі автобуси" />
+                        <MenuItem fx:id="outpu_bus_ondepot" mnemonicParsing="false" onAction="#filterBusesByDepot" text="Вивести всі автобуси, що знаходяться у парку" />
+                        <MenuItem fx:id="output_bus_on_route" mnemonicParsing="false" onAction="#filterBusesByNotDepot" text="Вивести всі автобуси, що знаходяться у рейсі" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Про додаток" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="add_bus" layoutX="855.0" layoutY="479.0" mnemonicParsing="false" onAction="#openAddBus" prefHeight="25.0" prefWidth="107.0" text="Додати автобус">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Button>
+            <TableView fx:id="table" layoutX="1.0" layoutY="27.0" prefHeight="434.0" prefWidth="1025.0" style="-fx-background-color: #616066;">
+              <columns>
+                <TableColumn fx:id="sequance" prefWidth="59.0" text="№" />
+                <TableColumn fx:id="route_number" prefWidth="130.0" text="Номер рейсу" />
+                  <TableColumn fx:id="bus_number" minWidth="0.0" prefWidth="137.0" text="Номер автобуса" />
+                  <TableColumn fx:id="driver" minWidth="0.0" prefWidth="352.0" text="ПІБ Водія" />
+                  <TableColumn fx:id="status_driver" minWidth="0.0" prefWidth="142.0" text="Статус автобуса" />
+                  <TableColumn fx:id="change_status" minWidth="0.0" prefWidth="98.0" />
+                  <TableColumn fx:id="delete_bus" minWidth="0.0" prefWidth="113.0" />
+              </columns>
+            </TableView>
+            <Label layoutX="35.0" layoutY="478.0" prefHeight="28.0" prefWidth="253.0" text="Пошук автобуса за реєстраційним номером" />
+            <Label layoutX="35.0" layoutY="518.0" prefHeight="28.0" prefWidth="253.0" text="Пошук автобуса за номером рейсу" />
+            <TextField fx:id="search_by_plate" layoutX="321.0" layoutY="479.0" />
+            <TextField fx:id="search_by_route" layoutX="321.0" layoutY="519.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="399.0" layoutY="14.0" text="E-BusDepot" textFill="#dddddd">
+         <font>
+            <Font name="Segoe MDL2 Assets" size="44.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

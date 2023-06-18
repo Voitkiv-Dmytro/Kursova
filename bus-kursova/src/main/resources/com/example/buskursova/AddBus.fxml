@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4b3b5;" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.buskursova.AddBus">
+   <children>
+      <AnchorPane layoutX="160.0" layoutY="28.0" prefHeight="317.0" prefWidth="263.0">
+         <children>
+            <TextField fx:id="enter_route" layoutX="52.0" layoutY="93.0" promptText="Введіть номер рейсу" />
+            <TextField fx:id="enter_bus_number" layoutX="52.0" layoutY="162.0" promptText="Введіть номер автобуса" />
+            <TextField fx:id="enter_driver" layoutX="52.0" layoutY="224.0" promptText="Введіть ПІБ водія" />
+            <Label layoutX="30.0" layoutY="69.0" text="Поле для введення номеру рейсу" />
+            <Label layoutX="30.0" layoutY="137.0" text="Поле для введення номеру автобуса" />
+            <Label layoutX="50.0" layoutY="197.0" text="Поле для введеня ПІБ водія" />
+            <Label layoutX="7.0" layoutY="-3.0" prefHeight="35.0" prefWidth="250.0" text="Створення нового автобуса">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="done" layoutX="465.0" layoutY="345.0" mnemonicParsing="false" onAction="#onDoneClick" text="Створити" />
+   </children>
+</AnchorPane>
